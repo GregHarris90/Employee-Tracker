@@ -16,7 +16,47 @@ const connection = mysql.createConnection({
 
 // Setup start function with inquirer that opens list of options
 
-// const start = () => {}
+const startOptions = () => {
+    inquirer.prompt([
+        {
+            name: 'menu',
+            type: 'list',
+            message: 'Please select which action you would like to take:',
+            choices: ['View All Employees', 'View All Employees By Department', 'View All Employees By Manager', 'Add Employee', 'Remove Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'EXIT'],
+        },
+    ]).then((answer) => {
+        switch (answer.menu) {
+            case 'View All Employees':
+                viewAllEmployees();
+                break;
+            case 'View All Employees By Department':
+                viewAllByDepartment();
+                break;
+            case 'View All Employees By Manager':
+                viewAllByManager();
+                break;
+            case 'Add Employee':
+                addEmployee();
+                break;
+            case 'Remove Employee':
+                removeEmployee();
+                break;
+            case 'Update Employee Role':
+                updateRole();
+                break;
+            case 'Update Employee Manager':
+                updateManager();
+                break;
+            case 'View All Roles':
+                viewAllRoles();
+            case 'EXIT':
+                connection.end();
+                break;
+        }
+        
+    })
+}
+
 
 // Setup first prompt for questions with list
 
@@ -35,7 +75,6 @@ const connection = mysql.createConnection({
 // Connect to the mysql server & sql database
 connection.connect((err) => {
     if (err) throw err;
+    startOptions();
     console.log(`Connected with id ${connection.threadId}`);
-    connection.end();
-    // start();
   });
