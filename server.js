@@ -58,13 +58,27 @@ const startOptions = () => {
 }
 
 // Setup separate functions with inquirer for each list option
+// Setup view all employees functions
+// Setup add employee
+// Setup update employee
+// Setup remove employee
 
 
+const viewAllEmployees = () => {
 
+}
 
+const addEmployee = () => {
 
+}
 
+const removeEmployee = () => {
 
+}
+
+const updateRole = () => {
+
+}
 
 
 
