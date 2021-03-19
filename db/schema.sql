@@ -16,6 +16,8 @@ CREATE TABLE employee(
     FOREIGN KEY (manager_id) REFERENCES role(id)
 );
 
+SELECT * FROM employee;
+
 CREATE TABLE role(
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30),
@@ -25,8 +27,12 @@ CREATE TABLE role(
     FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
+SELECT * FROM role;
+
 CREATE TABLE department(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(30),
     PRIMARY KEY (id)
 );
+
+SELECT * FROM department;
