@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
     user: 'root',
     password: 'MyCodingCamp90!',
     database: 'employees_db',
-  });
+});
 
 // Setup start function with inquirer that opens list of options
 
@@ -53,7 +53,7 @@ const startOptions = () => {
                 connection.end();
                 break;
         }
-        
+
     })
 }
 
@@ -65,8 +65,14 @@ const startOptions = () => {
 
 
 const viewAllEmployees = () => {
+    connection.query('SELECT * FROM employee;', (err, res) => {
+        if (err) throw err;
 
-}
+        console.log("LIST OF ALL EMPLOYEES:")
+        console.table(res);
+        startOptions();
+    });
+};
 
 const addEmployee = () => {
 
@@ -88,4 +94,4 @@ connection.connect((err) => {
     if (err) throw err;
     startOptions();
     console.log(`Connected with id ${connection.threadId}`);
-  });
+});
