@@ -57,9 +57,6 @@ const startOptions = () => {
     })
 }
 
-
-// Setup first prompt for questions with list
-
 // Setup separate functions with inquirer for each list option
 
 
