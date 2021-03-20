@@ -88,7 +88,7 @@ const viewAllDepartments = () => {
 };
 
 const viewAllRoles = () => {
-    connection.query('SELECT * FROM roles', (err, res) => {
+    connection.query('SELECT role_id, title, salary FROM roles', (err, res) => {
         if (err) throw err;
 
         console.log('\n', "LIST OF ALL ROLES:", '\n');
@@ -97,16 +97,16 @@ const viewAllRoles = () => {
     });
 };
 
-// const viewAllManagers = () => {
-//     let query =`SELECT employee.first_name, employee.last_name`
-//     connection.query(query, [],(err, res) => {
-//         if (err) throw err;
+const viewAllManagers = () => {
+    let query =`SELECT employee.first_name, employee.last_name FROM employee WHERE ?`;
+    connection.query(query, {manager_id: null},(err, res) => {
+        if (err) throw err;
 
-//         console.log('\n', "LIST OF ALL MANAGERS:", '\n');
-//         console.table(res);
-//         startOptions();
-//     });
-// }
+        console.log('\n', "LIST OF ALL MANAGERS:", '\n');
+        console.table(res);
+        startOptions();
+    });
+}
 
 //================================================================
 
