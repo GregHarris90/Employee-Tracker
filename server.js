@@ -98,8 +98,7 @@ const viewAllRoles = () => {
 };
 
 const viewAllManagers = () => {
-    let query =`SELECT employee.first_name, employee.last_name FROM employee WHERE ?`;
-    connection.query(query, {manager_id: null},(err, res) => {
+    connection.query('SELECT first_name, last_name FROM employee WHERE manager_id IS null', (err, res) => {
         if (err) throw err;
 
         console.log('\n', "LIST OF ALL MANAGERS:", '\n');
