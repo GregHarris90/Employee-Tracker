@@ -5,7 +5,6 @@ CREATE DATABASE employees_db;
 
 USE employees_db;
 
-
 CREATE TABLE department(
     dept_id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(30),
@@ -33,8 +32,9 @@ CREATE TABLE employee(
     manager_id INT,
     PRIMARY KEY (employ_id),
     FOREIGN KEY (role_num) REFERENCES roles(role_id),
-    FOREIGN KEY (manager_id) REFERENCES roles(role_id)
+    FOREIGN KEY (manager_id) REFERENCES employee(employ_id)
 );
 
--- SELECT * FROM employee;
-
+SELECT * FROM roles;
+SELECT * FROM department;
+SELECT * FROM employee;

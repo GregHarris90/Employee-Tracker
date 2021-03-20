@@ -4,11 +4,13 @@
     -- 2) roles (role_id(PK), title, salary, department_id)
     -- 3) employee (employ_id(PK), first_name, last_name, role_num, manager_id)
 
+
 USE employees_db;
 
 INSERT INTO department (name)
 VALUES ("Grocery"), ("Checking"), ("Deli"), ("Produce"), ("Dairy"), ("Meat");
 
+-- USE employees_db;
 
 INSERT INTO roles (title, salary, department_id)
 VALUES ("Store Manager", 90000, 1),
@@ -24,21 +26,23 @@ VALUES ("Store Manager", 90000, 1),
 ("Meat Manager", 55000, 6),
 ("Meat Clerk", 40000, 6);
 
+-- USE employees_db;
 
 INSERT INTO employee (first_name, last_name, role_num, manager_id)
-VALUES ("Bob", "Brown", 1, 1),
-("Susan", "Clark", 2, null),
-("Frank", "Johnson", 2, null),
-("Erik", "Smith", 3, null),
-("Fran", "Gunderson", 4, null),
-("Jennifer", "Larson", 5, 5),
-("Derrick", "Doe", 6, null),
-("Matt", "Yard", 7, 7),
-("Ted", "Rainer", 8, null)
-("Donnie", "Darko", 8, null),
-("Lindsey", "Forrel", 9, 9),
-("Adam", "Anders", 10, null),
-("Keagan", "Forrest", 10, null),
-("Larry", "Finestead", 11, 11),
-("Hanna", "Hogan", 12, null),
-("Jill", "Jefferson", 12, null);
+VALUES ("Bob", "Brown", 1, null),
+("Susan", "Clark", 2, 1),
+("Frank", "Johnson", 2, 1),
+("Erik", "Smith", 3, 1),
+("Fran", "Gunderson", 4, 1),
+("Jennifer", "Larson", 5, null),
+("Derrick", "Doe", 6, 5),
+("Matt", "Yard", 7, null),
+("Ted", "Rainer", 8, 7),
+("Donnie", "Darko", 8, 7),
+("Lindsey", "Forrel", 9, null),
+("Adam", "Anders", 10, 9),
+("Keagan", "Forrest", 10, 9),
+("Larry", "Finestead", 11, null),
+("Hanna", "Hogan", 12, 11),
+("Jill", "Jefferson", 12, 11);
+
