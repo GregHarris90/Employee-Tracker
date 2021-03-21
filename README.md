@@ -37,10 +37,10 @@
     - View All Departments
     - View All Roles
     - View All Managers
-    - Add Employee  *UNDER DEVELOPMENT*
-    - Remove Employee *UNDER DEVELOPMENT*
-    - Update Employee Role *UNDER DEVELOPMENT*
-    - Update Employee Manager *UNDER DEVELOPMENT*
+    - Add Employee  *(UNDER DEVELOPMENT)*
+    - Remove Employee *(UNDER DEVELOPMENT)*
+    - Update Employee Role *(UNDER DEVELOPMENT)*
+    - Update Employee Manager *(UNDER DEVELOPMENT)*
     - EXIT
 
 - Each options should perform the described function and once the user is done interacting with the Employee Tracker database they can end the application by pressing 'EXIT.'

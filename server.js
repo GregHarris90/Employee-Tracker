@@ -108,54 +108,59 @@ const viewAllManagers = () => {
 
 // ADD/REMOVE FUNCTIONS:
 
-// const addEmployee = () => {
+const addEmployee = () => {
+    connection.query('SELECT * FROM roles', (err, results) => {
+        if (err) throw err;
 
-//     inquirer.prompt([
-//         {
-//             name: 'first',
-//             type: 'input',
-//             message: 'What is their first name?'
-//         },
-//         {
-//             name: 'last',
-//             type: 'input',
-//             message: 'What is their last name?'
-//         },
-//         {
-//             name: 'role',
-//             type: 'list',
-//             message: 'What is their role in the store?',
-//             choices: ["Store Manager", "Grocery Clerk", "Checker", "Courtesy", "Deli Manager", "Deli Clerk", "Produce Manager", "Produce Clerk", "Dairy Manager", "Dairy Clerk", "Meat Manager", "Meat Clerk"]
-//         },
-//         {
-//             name: 'manager',
-//             type: 'number',
-//             message: 'What is their manager ID? (00 N/A, 01 Store, 05 Deli, 07 Produce, 09 Dairy, or 11 Meat)',
-//             validate(value) {
-//                 if (value == 00 || 01 || 05 || 07 || 09 || 11) {
-//                     return !isNaN(value);
-//                 } else if (value !== 00 || 01 || 05 || 07 || 09 || 11) {
-//                     console.log('This is not a valid number. Try again!')
-//                 }
-//             }
-//         },
-//     ]).then((answer) => {
-//         connection.query(
-//             'INSERT INTO employee SET ?',
-//             {
-//                 first_name: answer.first,
-//                 last_name: answer.last,
-//                 role_num: answer.role,
-//                 manager_id: answer.manager
-//             },
-//             (err) => {
-//                 if (err) throw err;
-//                 console.log('\n', 'This employee has been added to your database!', '\n');
-//                 startOptions();
-//             }
-//         )
-//     })
-// }
+        inquirer.prompt([
+            {
+                name: 'first',
+                type: 'input',
+                message: 'What is their first name?'
+            },
+            {
+                name: 'last',
+                type: 'input',
+                message: 'What is their last name?'
+            },
+            {
+                name: 'role',
+                type: 'list',
+                choices() {
+                    const roleArray = [];
+                    results.forEach(({ title }) => {
+                        roleArray.push(title);
+                    });
+                    return roleArray;
+                },
+                message: 'What is their role in the store?',
+            },
+
+        ]).then((answer) => {
+                let chosenRole;
+                results.forEach((role) => {
+                    if (role.role_num === answer.choice) {
+                        chosenRole = role_num;
+                    }
+                });
+
+                connection.query(
+                    'INSERT INTO employee SET ?',
+                    {
+                        first_name: answer.first,
+                        last_name: answer.last,
+                        role_num: chosenRole,
+                    },
+                    (err) => {
+                        if (err) throw err;
+                        console.log('\n', 'This employee has been added to your database!', '\n');
+                        startOptions();
+                    }
+                )
+        }   )
+    }
+    
+)}
 
 // const removeEmployee = () => {
 
