@@ -53,7 +53,45 @@
 
 *Main-Page*
 
+![ET-Main](https://user-images.githubusercontent.com/73864182/111900237-a21d8f00-89ee-11eb-93d7-b79d1a1bc8ec.png)
 
+*Run Node.js*
+
+![ET-Run](https://user-images.githubusercontent.com/73864182/111900238-a21d8f00-89ee-11eb-89a6-b17d524fe464.png)
+
+*Select-Option*
+
+![ET-Run1](https://user-images.githubusercontent.com/73864182/111900239-a2b62580-89ee-11eb-9363-c4517a18a37e.png)
+
+*Select-View All Employees*
+
+![ET-Run2](https://user-images.githubusercontent.com/73864182/111900240-a2b62580-89ee-11eb-9d42-0666020890cb.png)
+
+*Select-View All Departments*
+
+![ET-Run3](https://user-images.githubusercontent.com/73864182/111900241-a34ebc00-89ee-11eb-8b96-c2f4c686010e.png)
+
+*Select-View All Roles*
+
+![ET-Run4](https://user-images.githubusercontent.com/73864182/111900242-a34ebc00-89ee-11eb-8748-61164e4d2354.png)
+
+*Select-View All Managers*
+
+![ET-Run5](https://user-images.githubusercontent.com/73864182/111900243-a34ebc00-89ee-11eb-8746-87d53adbcf86.png)
+
+*Select-Add Employee* *(UNDER DEVELOPMENT)*
+
+![ET-Run6](https://user-images.githubusercontent.com/73864182/111900244-a3e75280-89ee-11eb-881e-1a4a13c3f2ec.png)
+
+*Receive-Error*
+
+![ET-Run7](https://user-images.githubusercontent.com/73864182/111900234-a053cb80-89ee-11eb-88a9-56574b140b2e.png)
+
+*Select-EXIT*
+
+![ET-Run8](https://user-images.githubusercontent.com/73864182/111900236-a184f880-89ee-11eb-848c-657ab1cf573c.png)
+
+*END OF APPLICATION*
 
 # Contact-Info:
 
