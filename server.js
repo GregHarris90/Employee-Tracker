@@ -64,18 +64,15 @@ const startOptions = () => {
 
 // VIEW FUNCTIONS:
 
-// const viewAllEmployees = () => {
-//     let query = 
-//         `SELECT employee.employ_id, employee.first_name, employee.last_name, employee.role_num, employee.manager_id, roles.title, roles.salary, role.department_id FROM employee INNER JOIN roles ON (employee.role_num = roles.title)`
+const viewAllEmployees = () => {
+    connection.query(`SELECT employee.employ_id, employee.first_name, employee.last_name, roles.title, roles.salary, department.name FROM employee INNER JOIN roles ON(employee.role_num = roles.role_id) INNER JOIN department ON(roles.department_id = department.dept_id)`, (err, res) => {
+        if (err) throw err;
 
-//     connection.query('SELECT employ_id, first_name, last_name FROM employee;', (err, res) => {
-//         if (err) throw err;
-
-//         console.log('\n', "LIST OF ALL EMPLOYEES:", '\n');
-//         console.table(res);
-//         startOptions();
-//     });
-// };
+        console.log('\n', "LIST OF ALL EMPLOYEES:", '\n');
+        console.table(res);
+        startOptions();
+    });
+};
 
 const viewAllDepartments = () => {
     connection.query('SELECT * FROM department', (err, res) => {
@@ -98,7 +95,7 @@ const viewAllRoles = () => {
 };
 
 const viewAllManagers = () => {
-    connection.query('SELECT first_name, last_name FROM employee WHERE manager_id IS null', (err, res) => {
+    connection.query('SELECT employ_id, first_name, last_name FROM employee WHERE manager_id IS null', (err, res) => {
         if (err) throw err;
 
         console.log('\n', "LIST OF ALL MANAGERS:", '\n');
